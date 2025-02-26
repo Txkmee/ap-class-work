@@ -54,17 +54,16 @@ public class Cleaner {
         
 
         // Miscellaneous
-        "as", "like", "than", "not", "now", "then", "here", 
+        "as", "like", "than", "now", "then", "here", 
         "there", "where", "when", "why", "how", "what", "who", 
         "whom", "whose", "which", "whatever", "whoever", "whichever", 
-        "anyone", "anything", "something", "everything", "nothing", 
-        "someone", "somebody", "everyone", "everybody", "no one", 
-        "nobody", "anybody", "anywhere", "somewhere", "everywhere", 
-        "nowhere", "anyway", "somehow", "somewhat", "anyhow", 
+        "anyone", "anything", "something", "everything", "someone", 
+        "anywhere", "somewhere", "everywhere", 
+        "anyway", "somehow", "somewhat", "anyhow", 
         "anyways", "anytime", "sometime", "sometimes", "meanwhile", 
         "therefore", "however", "otherwise", "instead", "perhaps", 
         "maybe", "almost", "enough", "indeed", "rather", "quite", 
-        "together", "apart", "alone", "along", "away", "back", 
+        "together", "apart", "along", "away", "back", 
         "forward", "further", "furthermore", "moreover", "nevertheless", 
         "nonetheless", "otherwise", "similarly", "subsequently", 
         "thereby", "thus", "whereas", "whereby", "wherein", "wherever",
@@ -73,24 +72,88 @@ public class Cleaner {
          "skip", "content", "home", "news", "sport", "business", "innovation", 
         "culture", "arts", "travel", "earth", "audio", "video", "live", "weather", "uk", 
         "politics", "england", "ireland", "scotland", "wales", "africa", "asia", 
-        "china", "india", "australia", "europe", "latin", "america", "middle", "east", 
-        "pictures", "bbc", "indepth", "verify", "executive", "lounge", "technology", 
-        "future", "science", "health", "artificial", "intelligence", "ai", "mind", "film", 
+        "pictures", "indepth", "verify", "executive", "lounge", "technology", 
+        "future", "science", "health", "artificial", "intelligence", "mind", "film", 
         "tv", "music", "art", "design", "style", "books", "entertainment", "motion", 
-        "destinations", "antarctica", "pacific", "caribbean", "bermuda", "central", 
-        "north", "south", "worlds", "table", "experiences", "adventures", 
+        "destinations", "worlds", "table", "experiences", "adventures", 
         "specialist", "natural", "wonders", "climate", "solutions", "sustainable", 
         "green", "living", "podcasts", "radio", "faqs", "newsletters", "shop", 
         "languages", "follow", "terms", "use", "privacy", "policy", "cookies", 
         "accessibility", "help", "contact", "advertise", "share", "sell", "info", 
         "technical", "support", "copyright", "responsible", "external", "sites", 
-        "linking", "approach", "read"
+        "linking", "approach", "read", "pc", "gamer", "main", "open", "menu", "close", "global",
+        "authority", "search", "games", "subscribe", "game", "hardware", "magazine", "edition",
+        "software", "movies", "movie", "forum", "industry", "issues", "issue", "newsletter"
 
     ));
 
     private static ArrayList<String> badWords = new ArrayList<> (Arrays.asList(
         "bad", "hold back", "trash", "incoherent", "ass", "mid", "shit", "dumb", 
-        "disruptive", "vain"
+    "disruptive", "vain", "useless", "garbage", "awful", "terrible", "horrible", 
+    "stupid", "nonsense", "pointless", "ridiculous", "lame", "crap", "foolish", 
+    "pathetic", "worthless", "broken", "messy", "chaotic", "annoying", "irritating", 
+    "frustrating", "boring", "unbearable", "unacceptable", "disappointing", "mediocre", 
+    "overrated", "underwhelming", "sloppy", "half-baked", "lazy", "incompetent", 
+    "clumsy", "awkward", "cringe", "embarrassing", "toxic", "nasty", "mean", 
+    "rude", "selfish", "arrogant", "ignorant", "hypocritical", "manipulative", 
+    "deceptive", "dishonest", "fake", "pretentious", "overhyped", "overpriced", 
+    "scam", "rip-off", "waste", "failure", "flop", "disaster", "trainwreck", 
+    "dumpster fire", "hot mess", "clusterfuck", "bullshit", "cringe-worthy", 
+    "eye-rolling", "facepalm", "yikes", "oof", "cringey", "painful", "unfunny", 
+    "uninspired", "derivative", "cliché", "predictable", "bland", "soulless", 
+    "empty", "shallow", "meaningless", "forgettable", "regrettable", "unoriginal", 
+    "repetitive", "tedious", "monotonous", "exhausting", "draining", "stressful", 
+    "infuriating", "maddening", "insufferable", "unpleasant", "miserable", 
+    "depressing", "hopeless", "grim", "bleak", "dreadful", "horrendous", 
+    "atrocious", "abysmal", "appalling", "revolting", "disgusting", "vile", 
+    "repulsive", "offensive", "insulting", "demeaning", "degrading", "humiliating", 
+    "shameful", "disgraceful", "embarrassment", "letdown", "fiasco", "debacle", 
+    "catastrophe", "calamity", "nightmare", "hellish", "grueling", "agonizing", 
+    "torturous", "unbearable", "unendurable", "unrelenting", "relentless", 
+    "merciless", "cruel", "harsh", "brutal", "savage", "vicious", "ruthless", 
+    "cutthroat", "backstabbing", "two-faced", "fake", "phony", "fraud", "liar", 
+    "cheat", "scammer", "thief", "crook", "villain", "monster", "demon", 
+    "devil", "beast", "savage", "barbaric", "inhumane", "heartless", "soulless", 
+    "cold", "callous", "indifferent", "apathetic", "uncaring", "self-centered", 
+    "egotistical", "narcissistic", "entitled", "spoiled", "bratty", "childish", 
+    "immature", "petty", "spiteful", "vengeful", "bitter", "resentful", 
+    "grudge-holding", "pessimistic", "cynical", "defeatist", "hopeless", 
+    "despairing", "despondent", "melancholic", "gloomy", "dreary", "dismal", 
+    "bleak", "dark", "shadowy", "sinister", "malevolent", "malicious", 
+    "wicked", "evil", "sinful", "corrupt", "depraved", "degenerate", 
+    "perverse", "twisted", "disturbed", "unhinged", "deranged", "psychotic", 
+    "maniacal", "insane", "crazy", "lunatic", "mad", "bonkers", "nuts", 
+    "batty", "loony", "wacko", "cuckoo", "bananas", "absurd", "preposterous", 
+    "ludicrous", "outrageous", "unbelievable", "unthinkable", "unimaginable", 
+    "inconceivable", "impossible", "hopeless", "lost", "doomed", "damned", 
+    "cursed", "hexed", "jinxed", "unlucky", "unfortunate", "ill-fated", 
+    "star-crossed", "tragic", "sad", "miserable", "wretched", "pitiful", 
+    "pathetic", "sorry", "lamentable", "regrettable", "unfortunate", 
+    "unhappy", "sorrowful", "grieving", "mournful", "heartbroken", "devastated", 
+    "crushed", "destroyed", "ruined", "shattered", "broken", "defeated", 
+    "beaten", "overwhelmed", "powerless", "helpless", "hopeless", "desperate", 
+    "despairing", "anguished", "tormented", "tortured", "suffering", "agonized", 
+    "miserable", "wretched", "unhappy", "sad", "depressed", "despondent", 
+    "melancholic", "gloomy", "dreary", "dismal", "bleak", "dark", "shadowy", 
+    "sinister", "malevolent", "malicious", "wicked", "evil", "sinful", 
+    "corrupt", "depraved", "degenerate", "perverse", "twisted", "disturbed", 
+    "unhinged", "deranged", "psychotic", "maniacal", "insane", "crazy", 
+    "lunatic", "mad", "bonkers", "nuts", "batty", "loony", "wacko", "cuckoo", 
+    "bananas", "absurd", "preposterous", "ludicrous", "outrageous", "unbelievable", 
+    "unthinkable", "unimaginable", "inconceivable", "impossible", "hopeless", 
+    "lost", "doomed", "damned", "cursed", "hexed", "jinxed", "unlucky", 
+    "unfortunate", "ill-fated", "star-crossed", "tragic", "sad", "miserable", 
+    "wretched", "pitiful", "pathetic", "sorry", "lamentable", "regrettable", 
+    "unfortunate", "unhappy", "sorrowful", "grieving", "mournful", "heartbroken", 
+    "devastated", "crushed", "destroyed", "ruined", "shattered", "broken", 
+    "defeated", "beaten", "overwhelmed", "powerless", "helpless", "hopeless", 
+    "desperate", "despairing", "anguished", "tormented", "tortured", "suffering", 
+    "agonized", "miserable", "wretched", "unhappy", "sad", "depressed", 
+    "despondent", "melancholic", "gloomy", "dreary", "dismal", "bleak", 
+    "dark", "shadowy", "sinister", "malevolent", "malicious", "wicked", 
+    "evil", "sinful", "corrupt", "depraved", "degenerate", "perverse", 
+    "twisted", "disturbed", "unhinged", "deranged", "psychotic", "maniacal", 
+    "insane", "crazy", "lunatic", "mad", "bonkers", "disappointed", "JR"
     ));
 
     private static ArrayList<String> goodWords = new ArrayList<> (Arrays.asList(
@@ -98,8 +161,50 @@ public class Cleaner {
         "great", "positive", "impressive", "superb", "brilliant", "incredible", 
         "awesome", "remarkable", "marvelous", "successful", "inspirational",
         "motivating", "exceptional", "extraordinary", "phenomenal", "outstanding",
-        "uplifting", "productive", "energetic", "joyful", "cheerful"
+        "uplifting", "productive", "energetic", "joyful", "cheerful", "delightful",
+        "thrilling", "splendid", "magnificent", "stellar", "glorious", "radiant",
+        "vibrant", "lively", "optimistic", "hopeful", "encouraging", "rewarding",
+        "fulfilling", "satisfying", "heartwarming", "charming", "captivating",
+        "enchanting", "mesmerizing", "breathtaking", "stunning", "electrifying",
+        "invigorating", "refreshing", "rejuvenating", "reassuring", "comforting",
+        "peaceful", "serene", "tranquil", "harmonious", "balanced", "wholesome",
+        "nurturing", "supportive", "compassionate", "kind", "generous", "gracious",
+        "humble", "grateful", "thankful", "blessed", "fortunate", "lucky", "prosperous",
+        "flourishing", "thriving", "blossoming", "blooming", "radiant", "shining",
+        "glowing", "sparkling", "dazzling", "gleaming", "twinkling", "luminous",
+        "vivid", "colorful", "dynamic", "vital", "robust", "resilient", "strong",
+        "powerful", "mighty", "unstoppable", "unstoppable", "unbeatable", "triumphant",
+        "victorious", "winning", "champion", "heroic", "legendary", "mythic", "epic",
+        "grand", "majestic", "regal", "royal", "noble", "dignified", "elegant",
+        "graceful", "polished", "refined", "sophisticated", "classy", "stylish",
+        "trendy", "fashionable", "chic", "modern", "innovative", "creative", "artistic",
+        "imaginative", "visionary", "inventive", "resourceful", "clever", "smart",
+        "intelligent", "wise", "knowledgeable", "insightful", "perceptive", "astute",
+        "shrewd", "sharp", "quick-witted", "brilliant", "genius", "prodigy", "masterful",
+        "skilled", "talented", "gifted", "accomplished", "proficient", "expert",
+        "adept", "competent", "capable", "efficient", "effective", "productive",
+        "diligent", "hardworking", "dedicated", "committed", "passionate", "enthusiastic",
+        "zealous", "fervent", "ardent", "devoted", "loyal", "faithful", "trustworthy",
+        "reliable", "dependable", "consistent", "steady", "stable", "secure", "safe",
+        "protected", "guarded", "shielded", "fortified", "resilient", "enduring",
+        "lasting", "permanent", "eternal", "timeless", "classic", "iconic", "legendary",
+        "unforgettable", "memorable", "notable", "significant", "meaningful", "profound",
+        "deep", "thoughtful", "reflective", "contemplative", "meditative", "calm",
+        "relaxed", "soothing", "healing", "restorative", "renewing", "revitalizing",
+        "empowering", "liberating", "freeing", "enlightening", "illuminating", "revealing",
+        "discovering", "exploring", "adventurous", "bold", "courageous", "brave",
+        "fearless", "daring", "audacious", "confident", "self-assured", "assertive",
+        "decisive", "determined", "resolute", "focused", "disciplined", "organized",
+        "structured", "methodical", "systematic", "logical", "rational", "reasonable",
+        "sensible", "practical", "realistic", "achievable", "attainable", "feasible",
+        "possible", "doable", "manageable", "workable", "functional", "operational",
+        "effective", "efficient", "productive", "fruitful", "beneficial", "advantageous",
+        "valuable", "precious", "treasured", "cherished", "beloved", "adored", "loved",
+        "admired", "respected", "esteemed", "honored", "praised", "celebrated", "applauded",
+        "acclaimed", "recognized", "acknowledged", "appreciated", "valued", "esteemed",
+        "honored", "respected", "revered", "venerated", "worshiped", "idolized", "adored"
     ));
+
     public static ArrayList<String> arrayer(String text) {
         text = text.replaceAll("[^a-zA-Z0-9 ]", "");
         text = text.toLowerCase();
@@ -108,20 +213,65 @@ public class Cleaner {
         return textArray;   
     }
 
-    public static ArrayList<String> textCleaner(String text) {
-        ArrayList<String> arrayed = arrayer(text);
-        for (int i = 0; i < arrayed.size(); i++) {
-            String arrayedText = arrayed.get(i);
+ 
+
+    public static ArrayList<String> findBadWords(ArrayList<String> list) {
+        ArrayList<String> listOfBadWords = new ArrayList();
+
+        for (int i = 0; i < list.size(); i++) {
+            String wordCheck = list.get(i);
+            for (int j = 0; j < badWords.size(); j++) {
+                String badWord = badWords.get(j);
+                if (wordCheck.equals(badWord)) {
+                    listOfBadWords.add(badWord);
+                }
+            }
+        }
+        return listOfBadWords;
+    }
+
+    public static ArrayList<String> findGoodWords(ArrayList<String> list) {
+        ArrayList<String> listOfGoodWords = new ArrayList();
+
+        for (int i = 0; i < list.size(); i++) {
+            String wordCheck = list.get(i);
+            for (int j = 0; j < goodWords.size(); j++) {
+                String goodWord = goodWords.get(j);
+                if (wordCheck.equals(goodWord)) {
+                    listOfGoodWords.add(goodWord);
+                }
+            }
+        }
+        return listOfGoodWords;
+}
+
+    public static void textCleaner(String text) {
+        ArrayList<String> cleanedText = arrayer(text);
+
+        for (int i = 0; i < cleanedText.size(); i++) {
+            String arrayedText = cleanedText.get(i);
             for (int j = 0; j < wordsToRemove.size(); j++) {
                 String wordChecked = wordsToRemove.get(j);
 
                 if (arrayedText.equals(wordChecked)) {
-                    arrayed.remove(i);
+                    cleanedText.remove(i);
                     i--;
                 }
             }
         }
 
-        return arrayed;
+        //Analysis
+        ArrayList<String> listOfGoodWords = new ArrayList();
+        ArrayList<String> listOfBadWords = new ArrayList();
+        int goodWordsCount = listOfGoodWords.size();
+        int badWordsCount = listOfBadWords.size();
+
+        System.out.println(
+            "Here is the cleaned version of the source: " + cleanedText + "\n" +
+            "There are " + goodWordsCount + " positive words: " + listOfGoodWords + "\n" +
+            "There are " + badWordsCount + " negative words: " + listOfBadWords
+        );
+
     }
+
 }
