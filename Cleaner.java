@@ -2,6 +2,11 @@ import java.util.*;
 
 public class Cleaner {
     private static final ArrayList<String> wordsToRemove = new ArrayList<>(Arrays.asList(
+        //random stuff
+        "canada", "australia", "miniitx", "motherboards", "gaming", "show", "signup", "guideline", "guide", "community",
+        "affiliate", "links", "meet", "team", "try", "subscription", "delivered", "door", "device", "from3599", "view", "avowed", "kingdom", "come", "deliverance", "civ", "nvidia", "rtx", "marvel",
+        "rivals", "reviews", "mag", 
+        
         // Articles
         "a", "an", "the",
 
@@ -261,17 +266,59 @@ public class Cleaner {
         }
 
         //Analysis
-        ArrayList<String> listOfGoodWords = new ArrayList();
-        ArrayList<String> listOfBadWords = new ArrayList();
-        int goodWordsCount = listOfGoodWords.size();
-        int badWordsCount = listOfBadWords.size();
+        ArrayList<String> goodWordsList = findGoodWords(cleanedText);
+        int amountOfGoodWords = goodWordsList.size();
+        ArrayList<String> badWordsList = findBadWords(cleanedText);
+        int amountOfBadWords = badWordsList.size();
 
         System.out.println(
             "Here is the cleaned version of the source: " + cleanedText + "\n" +
-            "There are " + goodWordsCount + " positive words: " + listOfGoodWords + "\n" +
-            "There are " + badWordsCount + " negative words: " + listOfBadWords
+            "There are " + amountOfGoodWords + " positive words: " + goodWordsList + "\n" +
+            "There are " + amountOfBadWords + " negative words: " + badWordsList
         );
 
     }
+
+    public static void textCleaner(ArrayList<String> list) {
+        int totalBadWords = 0;
+        int totalGoodWords = 0;
+        for (int k = 0; k < list.size(); k++) {
+            ArrayList<String> cleanedText = arrayer(list.get(k));
+
+            for (int i = 0; i < cleanedText.size(); i++) {
+                String arrayedText = cleanedText.get(i);
+                for (int j = 0; j < wordsToRemove.size(); j++) {
+                    String wordChecked = wordsToRemove.get(j);
+
+                    if (arrayedText.equals(wordChecked)) {
+                        cleanedText.remove(i);
+                        i--;
+                    }
+                }
+            }
+
+            //Analysis
+            ArrayList<String> goodWordsList = findGoodWords(cleanedText);
+            int amountOfGoodWords = goodWordsList.size();
+            totalGoodWords += goodWordsList.size();
+            ArrayList<String> badWordsList = findBadWords(cleanedText);
+            int amountOfBadWords = badWordsList.size();
+            totalBadWords += badWordsList.size();
+
+            System.out.println(
+                "Here is the cleaned version of the source number " + k + ": " + cleanedText + "\n" +
+                "There are " + amountOfGoodWords + " positive words: " + goodWordsList + "\n" +
+                "There are " + amountOfBadWords + " negative words: " + badWordsList + "\n"
+            );
+
+        }
+        System.out.println(
+                "\n Total Count Of All Bad Words: " + totalGoodWords +
+                "\n Total Count Of All Bad Words: " + totalBadWords
+            );
+        
+    }
+
+    
 
 }
