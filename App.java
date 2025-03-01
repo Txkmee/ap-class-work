@@ -10,7 +10,7 @@ public class App {
         qwe.add("Perm is not a good guy, come back from AP field trip pls good bad ok fine good amazing exeptional outstanding bad bad bad bad");
         qwe.add("Perm is not a good guy, come back from AP field trip pls good bad ok fine good amazing exeptional outstanding bad bad bad bad");
         qwe.add("Perm is not a good guy, come back from AP field trip pls good bad ok fine good amazing exeptional outstanding bad bad bad bad");
-        qwe.add("Perm is not a good guy, come back from AP field trip pls good bad ok fine good amazing exeptional outstanding bad bad bad bad");
+        qwe.add("Perm is not a good guy, come back from AP field trip pls good bad ok fine good amazing exeptional outstanding bad bad bad bad bad bad bad");
         qwe.add("Perm is not a good guy, come back from AP field trip pls good bad ok fine good amazing exeptional outstanding bad bad bad bad");
 
         // try {
@@ -24,10 +24,10 @@ public class App {
         //     e.printStackTrace();
         //     }
 
-        Document doc = Jsoup.connect("https://www.pcgamer.com/games/assassins-creed/i-played-6-hours-of-assassins-creed-shadows-and-folks-i-think-this-one-was-worth-the-wait/").get();
-        Document doc2 = Jsoup.connect("https://www.pcgamer.com/games/assassins-creed/i-played-6-hours-of-assassins-creed-shadows-and-folks-i-think-this-one-was-worth-the-wait/").get();
-        qwe.add(doc.text());
-        qwe.add(doc2.text());
+        Document pcGamerArticle = Jsoup.connect("https://www.pcgamer.com/games/assassins-creed/i-played-6-hours-of-assassins-creed-shadows-and-folks-i-think-this-one-was-worth-the-wait/").get();
+        Document ignArticle = Jsoup.connect("https://www.ign.com/articles/assassins-creed-shadows-is-not-the-ninja-splinter-cell-game-i-hoped-for").get();
+        qwe.add(pcGamerArticle.text());
+        qwe.add(ignArticle.text());
 
         Cleaner.textCleaner(qwe);
 
